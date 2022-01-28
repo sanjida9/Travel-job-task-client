@@ -10,9 +10,8 @@ import NavigationBar from "./components/NavigationBar/NavigationBar";
 import AuthProvider from "./context/AuthProvider";
 import Register from "./components/Register/Register";
 import PlaceOrder from "./components/PlaceOrder/PlaceOrder";
-import NewWatch from "./components/NewWatch/NewWatch";
-import MyOrders from "./components/MyOrders/MyOrders";
-import ManageAllOrders from "./components/ManageAllOrders/ManageAllOrders";
+import NewBlog from "./components/NewBlog/NewBlog";
+
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import MoreProducts from "./components/MoreProducts/MoreProducts";
 import Pay from "./components/Pay/Pay";
@@ -53,17 +52,12 @@ function App() {
             <PrivateRoute path="/review">
               <Review></Review>
             </PrivateRoute>
-            <PrivateRoute path="/newWatch">
-              <NewWatch></NewWatch>
+            <PrivateRoute path="/newBlog">
+              <NewBlog></NewBlog>
             </PrivateRoute>
-            <PrivateRoute path="/myOrders">
-              <MyOrders></MyOrders>
-            </PrivateRoute>
+
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
-            </PrivateRoute>
-            <PrivateRoute path="/manageAllOrders">
-              <ManageAllOrders></ManageAllOrders>
             </PrivateRoute>
 
             <Route path="*">

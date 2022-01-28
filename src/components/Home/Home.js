@@ -24,7 +24,7 @@ const Home = () => {
       <Banner></Banner>
 
       <div className="container">
-        <h1 className="fw-bold text-center text-blue mt-3">Our Collection</h1>
+        <h1 className="fw-bold fs-1 p-3 text-center text-blue mt-3">Blogs</h1>
         {blogs.length > 0 ? (
           <div className="row">
             {blogs.slice(0, 6).map((blog) => (
@@ -68,6 +68,18 @@ const Home = () => {
             </div>
           </div>
         )}
+        <nav aria-label="...">
+          <ul class="pagination pagination-lg">
+            <li class="page-item active" aria-current="page">
+              <span class="page-link">1</span>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">
+                2
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
 
       <div id="award" className=" p-3">

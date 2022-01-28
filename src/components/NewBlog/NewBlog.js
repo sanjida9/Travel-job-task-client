@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
-const NewWatch = () => {
+const NewBlog = () => {
   const {
     register,
     handleSubmit,
@@ -12,18 +12,16 @@ const NewWatch = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    axios
-      .post("https://still-peak-87260.herokuapp.com/newWatch", data)
-      .then((res) => {
-        alert("New watch has been added!");
-        reset();
-      });
+    axios.post("http://localhost:5000/newBlog", data).then((res) => {
+      alert("New blog has been added!");
+      reset();
+    });
   };
 
   return (
     <div className="container mx-auto p-4 bg-gray-200 p-4 my-4">
       <h2 className="text-center text-3xl font-bold mb-6">
-        Add A New <span className="text-primary">Watch</span>
+        Add A New <span className="text-primary">Blog</span>
       </h2>
 
       <form
@@ -34,11 +32,23 @@ const NewWatch = () => {
         <input
           className="form-control"
           {...register("name", { required: true })}
-          placeholder="Name"
+          placeholder="Title"
+        />
+        <br />
+        <input
+          className="form-control"
+          {...register("tname", { required: true })}
+          placeholder="Travelers Name"
+        />
+        <br />
+        <input
+          className="form-control"
+          {...register("category", { required: true })}
+          placeholder="Category"
         />
         {errors.name && <span>This field is required</span>}
         <br />
-        <br />
+
         <input
           className="form-control"
           {...register("price", { required: true })}
@@ -46,7 +56,7 @@ const NewWatch = () => {
         />
         {errors.price && <span>This field is required</span>}
         <br />
-        <br />
+
         <input
           className="form-control"
           {...register("rating", { required: true })}
@@ -54,7 +64,7 @@ const NewWatch = () => {
         />
         {errors.rating && <span>This field is required</span>}
         <br />
-        <br />
+
         <input
           className="form-control"
           {...register("img", { required: true })}
@@ -62,6 +72,12 @@ const NewWatch = () => {
         />
         {errors.img && <span>This field is required</span>}
         <br />
+
+        <input
+          className="form-control"
+          {...register("location", { required: true })}
+          placeholder="Location"
+        />
         <br />
         <textarea
           className="form-control"
@@ -70,15 +86,15 @@ const NewWatch = () => {
         />
         {errors.description && <span>This field is required</span>}
         <br />
-        <br />
+
         <input
           className=" btn-success bg-blue px-5 py-2 rounded border-0"
           type="submit"
-          value="Add Watch"
+          value="Add Blog"
         />
       </form>
     </div>
   );
 };
 
-export default NewWatch;
+export default NewBlog;

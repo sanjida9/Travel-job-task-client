@@ -1,41 +1,87 @@
+import { faBong } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Bg from "../../../src/assets/images/bbg-8.jpg";
+import Bg1 from "../../../src/assets/images/bbg-9.jpg";
+import Bg2 from "../../../src/assets/images/bbg-10.jpg";
 
 const Banner = () => {
   return (
     <div>
-      <div
-        style={{
-          background: `url(${Bg})`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-        }}
-      >
-        <Container>
-          <div
-            style={{ height: "90vh" }}
-            className="d-flex justify-content-center align-items-center"
-          >
-            <div className="text-center fw-bold  my-5 p-5">
-              <h1 className="text-white fs-1 fw-bold">
-                <i>Welcome To TraVio</i>
-              </h1>
-
-              <h6 className="my-4 text-white fs-5">
-                <i>The face is a picture of the mind with an eyes</i>
-              </h6>
-
-              <Link to={"/moreProducts"}>
-                <Button className="rounded-pill fs-5 py-2 px-4 bg-blue text-light">
-                  Explore
-                </Button>
-              </Link>
+      <div>
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                style={{ height: "450px" }}
+                src={Bg}
+                class="d-block w-100 "
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                style={{ height: "450px" }}
+                src={Bg1}
+                class="d-block w-100 "
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                style={{ height: "450px" }}
+                src={Bg2}
+                class="d-block w-100 "
+                alt="..."
+              />
             </div>
           </div>
-        </Container>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
     </div>
   );

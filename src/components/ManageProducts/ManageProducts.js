@@ -13,7 +13,7 @@ const ManageProducts = () => {
 
     if (isDelete) {
       axios
-        .post("https://still-peak-87260.herokuapp.com/deleteProducts", {
+        .post("http://localhost:5000/deleteProducts", {
           deleteReqId: id,
         })
         .then(function (response) {
@@ -28,7 +28,7 @@ const ManageProducts = () => {
 
   useEffect(() => {
     axios
-      .get("https://still-peak-87260.herokuapp.com/getProducts")
+      .get("http://localhost:5000/getProducts")
       .then(function (response) {
         setProducts(response.data);
         console.log(response.data);
@@ -41,7 +41,7 @@ const ManageProducts = () => {
     <div>
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-6">
-          Manage <span className="text-primary">Products</span>
+          Manage <span className="text-primary">Blog</span>
         </h2>
         <div className="">
           <div className="">
@@ -50,7 +50,10 @@ const ManageProducts = () => {
                 <table className="table" style={{ width: "100%" }}>
                   <thead className="">
                     <tr>
-                      <th scope="col">Model</th>
+                      <th scope="col">Id</th>
+                      <th scope="col">Image</th>
+                      <th scope="col">Title</th>
+                      <th scope="col">Name</th>
                       <th scope="col">Price</th>
                       <th scope="col">Rating</th>
                       <th scope="col">Delete</th>
@@ -60,6 +63,32 @@ const ManageProducts = () => {
                     {products.length > 0 ? (
                       products.map((product) => (
                         <tr key={product._id}>
+                          <td>
+                            <div className="flex items-center">
+                              <div className="text-sm font-medium text-gray-900">
+                                {product.id}
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div
+                              style={{ height: "100px", width: "100px" }}
+                              className=""
+                            >
+                              <img
+                                className=" rounded-circle img-fluid"
+                                src={product.img}
+                                alt=""
+                              />
+                            </div>
+                          </td>
+                          <td>
+                            <div className="flex items-center">
+                              <div className="text-sm font-medium text-gray-900">
+                                {product.title}
+                              </div>
+                            </div>
+                          </td>
                           <td>
                             <div className="flex items-center">
                               <div className="text-sm font-medium text-gray-900">
