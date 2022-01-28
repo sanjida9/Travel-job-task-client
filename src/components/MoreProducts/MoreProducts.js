@@ -6,43 +6,43 @@ import NavigationBar from "../NavigationBar/NavigationBar";
 import Footer from "../Footer/Footer";
 
 const MoreProducts = () => {
-  const [watches, setWatches] = useState([]);
+  const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://still-peak-87260.herokuapp.com/watches")
-      .then((res) => setWatches(res.data));
+      .get("https://mighty-ridge-99133.herokuapp.com/blogs")
+      .then((res) => setBlogs(res.data));
   }, []);
   return (
     <>
       <NavigationBar></NavigationBar>
       <div className="container">
-        <h1 className="fw-bold text-center text-blue mt-3 p-3">Watches</h1>
-        {watches.length > 0 ? (
+        <h1 className="fw-bold text-center text-blue mt-3 p-3">Blogs</h1>
+        {blogs.length > 0 ? (
           <div className="row">
-            {watches.map((watch) => (
+            {blogs.map((blog) => (
               <>
                 <div className="col-md-4 my-3">
                   <Card className="border-0 shadow hover-card">
                     <Card.Img
                       className="img-fluid p-2 "
                       variant="top"
-                      src={watch.img}
+                      src={blog.img}
                     />
                     <Card.Body>
                       <Card.Title className="fw-bold text-blue text-center">
-                        {watch.name}
+                        {blog.name}
                       </Card.Title>
                       <Card.Text className="text-blue text-center">
-                        {watch.description.slice(0, 140)}...
+                        {blog.description.slice(0, 140)}...
                       </Card.Text>
                       <Card.Title className="fw-bold text-blue text-center">
-                        ${watch.price}
+                        ${blog.price}
                       </Card.Title>
                       <div className="text-center">
-                        <Link to={`/watch/${watch._id}`}>
+                        <Link to={`/blog/${blog._id}`}>
                           <Button className="btn-success bg-blue px-5 btnHover">
-                            Buy Now
+                            See More
                           </Button>
                         </Link>
                       </div>

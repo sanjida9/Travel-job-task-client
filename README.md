@@ -2,12 +2,16 @@
 
 ## Live Website Link [Click here](https://travio-6dde8.web.app/)
 
+## Server Side Code Link [Click here](https://github.com/sanjida9/Travel-job-task-server)
+
 ## Description
 
-## We guarantee that all of our services are authentic.
+## It's a travel related website
 
 ### It's a website which is about Travel Blog
 
-### User need to register and then login
+### User need to register and then login for showing the details of the travel blog
 
-### admin can manage the site and they can see all the orders from customer
+### User can write blog and give review
+
+### admin can manage the site and they can create,update,delete any blog post.

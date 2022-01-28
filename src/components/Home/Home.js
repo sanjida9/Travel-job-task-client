@@ -27,7 +27,7 @@ const Home = () => {
         <h1 className="fw-bold fs-1 p-3 text-center text-blue mt-3">Blogs</h1>
         {blogs.length > 0 ? (
           <div className="row">
-            {blogs.slice(0, 6).map((blog) => (
+            {blogs.slice(0, 20).map((blog) => (
               <>
                 <div className="col-md-4 my-3">
                   <Card className="border-0 shadow hover-card">
@@ -82,6 +82,39 @@ const Home = () => {
         </nav>
       </div>
 
+      <div className="container">
+        <h1 className=" fs-2 text-center p-5 fw-bold text-blue">Reviews</h1>
+        <div class="review-block">
+          {reviews.map((review) => (
+            <div class="row">
+              <div>
+                <div class="col-sm-3">
+                  <img
+                    style={{ width: "100px" }}
+                    src={review.img}
+                    class="img-rounded"
+                    alt=""
+                  />
+                </div>
+                <div class="col-sm-9">
+                  <Rating
+                    readonly
+                    initialRating={review.rating}
+                    emptySymbol={
+                      <i className="far fa-star text-yellow-500"></i>
+                    }
+                    fullSymbol={<i className="fa fa-star text-yellow-500"></i>}
+                  />
+                  <div class="fw-bold">{review.fullName}</div>
+                  <div class="review-block-description">{review.review}</div>
+                </div>
+                <hr />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div id="award" className=" p-3">
         <div className="">
           <div className="py-3 ">
@@ -131,34 +164,6 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="container">
-        <h1 className="mx-auto fs-3 fw-bold">Reviews</h1>
-        <div class="review-block">
-          {reviews.map((review) => (
-            <div class="row">
-              <div class="col-sm-3">
-                <img
-                  style={{ width: "100px" }}
-                  src={review.img}
-                  class="img-rounded "
-                  alt=""
-                />
-              </div>
-              <div class="col-sm-9">
-                <Rating
-                  readonly
-                  initialRating={review.rating}
-                  emptySymbol={<i className="far fa-star text-yellow-500"></i>}
-                  fullSymbol={<i className="fa fa-star text-yellow-500"></i>}
-                />
-                <div class="fw-bold">{review.fullName}</div>
-                <div class="review-block-description">{review.review}</div>
-              </div>
-              <hr />
-            </div>
-          ))}
-        </div>
-      </div>
       <Footer></Footer>
     </div>
   );
